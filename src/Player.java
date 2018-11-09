@@ -21,23 +21,21 @@ public class Player extends Field {
     public Player() {
         super();
     }
-    
+
     @Override
-    public void move(Direction direction)
-    {
-        switch(direction)
-        {
+    public void move(Direction direction) {
+        switch (direction) {
             case LEFT:
-                setCol(getCol()-1);
+                setCol(getCol() - 1);
                 break;
             case RIGHT:
-                setCol(getCol()+1);
+                setCol(getCol() + 1);
                 break;
             case UP:
-                setRow(getRow()-1);
+                setRow(getRow() - 1);
                 break;
             case DOWN:
-                setRow(getRow()+1);
+                setRow(getRow() + 1);
                 break;
         }
     }

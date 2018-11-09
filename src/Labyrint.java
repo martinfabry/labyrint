@@ -2,8 +2,6 @@
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
 /*
@@ -15,7 +13,7 @@ import javax.swing.JOptionPane;
  *
  * @author Gamer-PC
  */
-public class Labyrint {
+public final class Labyrint {
 
     private Field[][] labyrint;
     private Field player;
@@ -38,22 +36,19 @@ public class Labyrint {
     public Field[][] getLabyrint() {
         return labyrint;
     }
-    
-    public int getNumberOfRows()
-    {
+
+    public int getNumberOfRows() {
         return labyrint.length;
     }
-    
-    public int getNumberOfCols()
-    {
+
+    public int getNumberOfCols() {
         return labyrint[0].length;
     }
 
-    public Field getFieldOnIndexes(int row, int col)
-    {
+    public Field getFieldOnIndexes(int row, int col) {
         return labyrint[row][col];
     }
-    
+
     public Field getPlayer() {
         return player;
     }
@@ -103,7 +98,7 @@ public class Labyrint {
             labyrint[row][col] = new Wall(row, col);
             return true;
         } catch (Exception ex) {
-
+            JOptionPane.showMessageDialog(null, "Error in creating new Wall!", "Error", JOptionPane.ERROR_MESSAGE);
         }
         return false;
     }
@@ -113,7 +108,7 @@ public class Labyrint {
             labyrint[row][col] = new Field(row, col);
             return true;
         } catch (Exception ex) {
-            //
+            JOptionPane.showMessageDialog(null, "Error in creating new Field!", "Error", JOptionPane.ERROR_MESSAGE);
         }
         return false;
     }
@@ -187,16 +182,12 @@ public class Labyrint {
             temp.move(direction);
             int row = temp.getRow();
             int col = temp.getCol();
-            //System.out.println("player:"+player.getRow()+","+player.getCol());
-            //System.out.println("Temp:"+temp.getRow()+","+temp.getCol());
-            if(labyrint[row][col] instanceof Exit)
-            {
+            if (labyrint[row][col] instanceof Exit) {
                 removeExit();
                 removePlayer();
                 addPlayer(row, col);
                 return true;
-            }
-            else if ((labyrint[row][col] instanceof Wall) == false && row >= 0 && row < labyrint.length && col >= 0 && col < labyrint[0].length) {
+            } else if ((labyrint[row][col] instanceof Wall) == false && row >= 0 && row < labyrint.length && col >= 0 && col < labyrint[0].length) {
                 removePlayer();
                 addPlayer(row, col);
                 return true;

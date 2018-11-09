@@ -13,8 +13,8 @@ import java.util.List;
  */
 public class Game {
 
-    private Labyrint labyrint;
-    private List<Field> playerPositions;
+    private final Labyrint labyrint;
+    private final List<Field> playerPositions;
 
     public Game(Labyrint labyrint, List<Field> playerPositions) {
         this.labyrint = labyrint;
@@ -32,10 +32,7 @@ public class Game {
     }
 
     public boolean isEndOfGame() {
-        if (labyrint.getExit() == null) {
-            return true;
-        }
-        return false;
+        return labyrint.getExit() == null;
     }
 
     public String getPlayerPositions() {

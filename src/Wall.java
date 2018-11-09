@@ -8,7 +8,7 @@
  *
  * @author Gamer-PC
  */
-public class Wall extends Field{
+public class Wall extends Field {
 
     public Wall(int row, int col) {
         super(row, col);
@@ -17,7 +17,7 @@ public class Wall extends Field{
     public Wall(Field field) {
         super(field);
     }
-    
+
     public Wall() {
         super();
     }
@@ -26,7 +26,5 @@ public class Wall extends Field{
     public String toString() {
         return "#";
     }
-    
-    
-    
+
 }

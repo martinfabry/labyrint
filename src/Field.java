@@ -9,20 +9,21 @@
  * @author Gamer-PC
  */
 public class Field {
+
     private int row, col;
 
-    public Field(int x, int y) {
-        this.row = x;
-        this.col = y;
+    public Field(int row, int col) {
+        this.row = row;
+        this.col = col;
     }
-    
+
     public Field(Field field) {
         this.row = field.row;
         this.col = field.col;
     }
 
     public Field() {
-        this.row = this. col = 0;
+        this.row = this.col = 0;
     }
 
     public int getRow() {
@@ -40,32 +41,14 @@ public class Field {
     public void setCol(int col) {
         this.col = col;
     }
-    
-    public String getTypeOfClass()
-    {
-        return this.getClass().getName();
+
+    public void move(Direction direction) {
     }
-    
-    public boolean isTypeExit()
-    {
-        return this instanceof Exit;
-    }
-    
-    public boolean isTypeWall()
-    {
-        return this instanceof Wall;
-    }
-    
-    public boolean isTypePerson()
-    {
-        return this instanceof Player;
-    }
-    
-    public void move(Direction direction) {};
+
+    ;
     
     @Override
-    public String toString()
-    {
+    public String toString() {
         return " ";
     }
 }
