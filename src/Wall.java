@@ -10,8 +10,8 @@
  */
 public class Wall extends Field{
 
-    public Wall(int x, int y) {
-        super(x, y);
+    public Wall(int row, int col) {
+        super(row, col);
     }
 
     public Wall(Field field) {

@@ -10,8 +10,8 @@
  */
 public class Exit extends Field {
 
-    public Exit(int x, int y) {
-        super(x, y);
+    public Exit(int row, int col) {
+        super(row, col);
     }
 
     public Exit(Field field) {

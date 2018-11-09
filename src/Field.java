@@ -9,36 +9,36 @@
  * @author Gamer-PC
  */
 public class Field {
-    private int x, y;
+    private int row, col;
 
     public Field(int x, int y) {
-        this.x = x;
-        this.y = y;
+        this.row = x;
+        this.col = y;
     }
     
     public Field(Field field) {
-        this.x = field.x;
-        this.y = field.y;
+        this.row = field.row;
+        this.col = field.col;
     }
 
     public Field() {
-        this.x = this. y = 0;
+        this.row = this. col = 0;
     }
 
-    public int getX() {
-        return x;
+    public int getRow() {
+        return row;
     }
 
-    public int getY() {
-        return y;
+    public int getCol() {
+        return col;
     }
 
-    public void setX(int x) {
-        this.x = x;
+    public void setRow(int row) {
+        this.row = row;
     }
 
-    public void setY(int y) {
-        this.y = y;
+    public void setCol(int col) {
+        this.col = col;
     }
     
     public String getTypeOfClass()
@@ -58,8 +58,10 @@ public class Field {
     
     public boolean isTypePerson()
     {
-        return this instanceof Person;
+        return this instanceof Player;
     }
+    
+    public void move(Direction direction) {};
     
     @Override
     public String toString()
