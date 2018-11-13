@@ -30,6 +30,12 @@
       -post-jar:                 called after JAR building
       -post-clean:               called after cleaning build products
 
+mvn sonar:sonar \
+  -Dsonar.projectKey=martinfabry_labyrint \
+  -Dsonar.organization=martinfabry-github \
+  -Dsonar.host.url=https://sonarcloud.io \
+  -Dsonar.login=labyrint
+
     (Targets beginning with '-' are not intended to be called on their own.)
 
     Example of inserting an obfuscator after compilation could look like this:
